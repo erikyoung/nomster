@@ -3,7 +3,6 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
   def index
     @places = Place.paginate(:page => params[:page], per_page: 2)
-    @comment = Comment.new
   end
 
   def new
@@ -22,6 +21,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
   def show
     @place = Place.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
