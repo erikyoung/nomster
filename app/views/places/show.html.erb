@@ -3,6 +3,7 @@
   <i><%= @place.address %></i>
   <br/><br/>
   <p><%= @place.description %></p>
+  <p><%= @place.photos %></p>
 
 
 
@@ -90,3 +91,13 @@
     </blockquote>
   </div>
 <% end %>
+
+<div class="clear-photo"></div>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :caption %>
+<% end %>
+
+
+
+
